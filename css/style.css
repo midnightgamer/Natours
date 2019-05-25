@@ -101,6 +101,16 @@ body{
         transform: translate(0);
     }
 }
+@keyframes moveInUp  {
+    0%{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
 
 
 
@@ -112,18 +122,47 @@ body{
     display: inline-block;
     transition: all 0.3s ease;
     border-radius: 100px;
+    position: relative;
 }
 .btn:hover,
 .btn:focus{
     transform: translateY(-4px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+
 }
 .btn:active{
     transform: translateY(-1px);
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.btn::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.5s ease;
 }
 .btn-white {
     background: #ffffff;
     color: #777777;
 }
 
+.btn-white::after{
+    background-color: white;
+}
+
+.btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated{
+    animation: moveInUp .5s ease-out .75s;
+    animation-fill-mode: backwards;
+
+}
