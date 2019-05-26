@@ -1,15 +1,30 @@
 
+.btn {
+  &:link,
+  &:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border-radius: 10rem;
+    position: relative;
+    font-size: 1.6rem;
+  }
+  &--white {
+    background: $color-white;
+    color: $color-grey-dark;
 
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  transition: all 0.3s ease;
-  border-radius: 10rem;
-  position: relative;
-  font-size: 1.6rem;
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--animated {
+    animation: moveInUp .5s ease-out .75s;
+    animation-fill-mode: backwards;
+
+  }
 }
 
 .btn:hover,
@@ -41,20 +56,6 @@
   z-index: -1;
   transition: all 0.5s ease;
 
-  &--white {
-    background: $color-white;
-    color: $color-grey-dark;
-
-    &::after {
-      background-color: $color-white;
-    }
-  }
-
-  &--animated {
-    animation: moveInUp .5s ease-out .75s;
-    animation-fill-mode: backwards;
-
-  }
 }
 
 
