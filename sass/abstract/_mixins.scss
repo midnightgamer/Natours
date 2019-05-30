@@ -13,11 +13,6 @@
 1200 - 1800 is where current normal style apply
 1800+ Big Desktop
 */
-@mixin respond-phone{
-  @media (max-width: 600px) {
-    @content
-  }
-}
 /*
 Breakpoints
 -phone
@@ -25,24 +20,29 @@ Breakpoints
 -tab-land
 -big-desktop
 */
+
+/*
+1em = 16px
+ORDER : Base+ typography > general layouts + grid > page layout > components
+*/
 @mixin respond($breakpoints){
   @if $breakpoints == phone{
-    @media (max-width: 600px) {
+    @media (max-width: 37.5em) { //600px
       @content
     }
   }
   @if $breakpoints == tab-port{
-    @media (max-width: 900px) {
+    @media screen and (max-width: 56.25rem) { //900px
       @content
     }
   }
   @if $breakpoints == tab-land{
-    @media (max-width: 1200px) {
+    @media (max-width: 75em) { //1200px
       @content
     }
   }
   @if $breakpoints == big-desktop{
-    @media (min-width: 1800px) {
+    @media (min-width: 112.5em) { //1800+
       @content
     }
   }

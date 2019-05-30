@@ -9,19 +9,27 @@
 
 html {
   font-size: 62.5%; //62.5 % 1 rem = 10px
-  @include respond(phone){
-    font-size: 50%;
-  } @include respond(tab-port){
-    font-size: 60%;
-  } @include respond(tab-land){
-    font-size: 70%;
-  } @include respond(big-desktop){
-    font-size: 80%;
+  @include respond(big-desktop) {
+    font-size: 75%;
   }
+
+  @include respond(tab-land) { // width <1200px
+    font-size: 56.25%; //9px = 9/16 = 56.25%
+  }
+
+  @include respond(tab-port) { //Width<900px
+    font-size: 50%; //   8px = 8/16 = 50%
+  }
+
 }
 body{
   box-sizing: border-box;
   scroll-behavior: smooth;
   transition: all .5s ease;
   text-rendering: optimizeLegibility;
+  padding: 2.5rem;
+
+  @include respond(tab-port) {
+   padding: 0;
+  }
 }
