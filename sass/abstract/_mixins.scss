@@ -5,3 +5,45 @@
     clear: both;
   }
 }
+//Media query manager
+/*
+0-600 Phone
+600-900 Tab Portrait
+900-1220 Tob Landscape
+1200 - 1800 is where current normal style apply
+1800+ Big Desktop
+*/
+@mixin respond-phone{
+  @media (max-width: 600px) {
+    @content
+  }
+}
+/*
+Breakpoints
+-phone
+-tab-port
+-tab-land
+-big-desktop
+*/
+@mixin respond($breakpoints){
+  @if $breakpoints == phone{
+    @media (max-width: 600px) {
+      @content
+    }
+  }
+  @if $breakpoints == tab-port{
+    @media (max-width: 900px) {
+      @content
+    }
+  }
+  @if $breakpoints == tab-land{
+    @media (max-width: 1200px) {
+      @content
+    }
+  }
+  @if $breakpoints == big-desktop{
+    @media (min-width: 1800px) {
+      @content
+    }
+  }
+}

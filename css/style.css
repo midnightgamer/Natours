@@ -1,3 +1,17 @@
+/*
+0-600 Phone
+600-900 Tab Portrait
+900-1220 Tob Landscape
+1200 - 1800 is where current normal style apply
+1800+ Big Desktop
+*/
+/*
+Breakpoints
+-phone
+-tab-port
+-tab-land
+-big-desktop
+*/
 *,
 *::after,
 *::before {
@@ -7,9 +21,24 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 600px) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 900px) {
+    html {
+      font-size: 60%; } }
+  @media (max-width: 1200px) {
+    html {
+      font-size: 70%; } }
+  @media (min-width: 1800px) {
+    html {
+      font-size: 80%; } }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  transition: all .5s ease;
+  text-rendering: optimizeLegibility; }
 
 @keyframes moveInLeft {
   0% {
